@@ -50,5 +50,95 @@ public class PersonTablePageData extends AbstractTablePageData {
 
 	public static class PersonTableRowData extends AbstractTableRowData {
 		private static final long serialVersionUID = 1L;
+		public static final String personId = "personId";
+		public static final String firstName = "firstName";
+		public static final String lastName = "lastName";
+		public static final String city = "city";
+		public static final String country = "country";
+		public static final String phone = "phone";
+		public static final String mobile = "mobile";
+		public static final String email = "email";
+		public static final String organization = "organization";
+		private String m_personId;
+		private String m_firstName;
+		private String m_lastName;
+		private String m_city;
+		private String m_country;
+		private String m_phone;
+		private String m_mobile;
+		private String m_email;
+		private String m_organization;
+
+		public String getPersonId() {
+			return m_personId;
+		}
+
+		public void setPersonId(String newPersonId) {
+			m_personId = newPersonId;
+		}
+
+		public String getFirstName() {
+			return m_firstName;
+		}
+
+		public void setFirstName(String newFirstName) {
+			m_firstName = newFirstName;
+		}
+
+		public String getLastName() {
+			return m_lastName;
+		}
+
+		public void setLastName(String newLastName) {
+			m_lastName = newLastName;
+		}
+
+		public String getCity() {
+			return m_city;
+		}
+
+		public void setCity(String newCity) {
+			m_city = newCity;
+		}
+
+		public String getCountry() {
+			return m_country;
+		}
+
+		public void setCountry(String newCountry) {
+			m_country = newCountry;
+		}
+
+		public String getPhone() {
+			return m_phone;
+		}
+
+		public void setPhone(String newPhone) {
+			m_phone = newPhone;
+		}
+
+		public String getMobile() {
+			return m_mobile;
+		}
+
+		public void setMobile(String newMobile) {
+			m_mobile = newMobile;
+		}
+
+		public String getEmail() {
+			return m_email;
+		}
+
+		public void setEmail(String newEmail) {
+			m_email = newEmail;
+		}
+
+		public String getOrganization() {
+			return m_organization;
+		}
+
+		public void setOrganization(String newOrganization) {
+			m_organization = newOrganization;
+		}
 	}
 }

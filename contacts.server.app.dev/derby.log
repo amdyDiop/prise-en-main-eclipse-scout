@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Apr 16 13:12:40 GMT 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0178-dacf-e3f2-000004008000 
+Fri Apr 16 14:14:08 GMT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0178-db08-276b-000004221800 
 on database directory memory:/home/amdy/eclipse-workspace/contacts/contacts.server.app.dev/contacts-database with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 
 Loaded from file:/home/amdy/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Ubuntu

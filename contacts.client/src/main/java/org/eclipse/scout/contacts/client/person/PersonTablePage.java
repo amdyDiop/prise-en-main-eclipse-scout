@@ -44,6 +44,169 @@ public class PersonTablePage extends AbstractPageWithTable<Table> {
 
 	public class Table extends AbstractTable {
 
+		public LastNameColumn getLastNameColumn() {
+			return getColumnSet().getColumnByClass(LastNameColumn.class);
+		}
+
+		public PersonIdColumn getPersonIdColumn() {
+			return getColumnSet().getColumnByClass(PersonIdColumn.class);
+		}
+
+		@Order(2)
+		public class FirstNameColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("FirstName");
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 120;
+			}
+
+		}
+
+		@Order(1)
+		public class PersonIdColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("MyNlsKey");
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 100;
+			}
+
+			@Override
+			protected boolean getConfiguredDisplayable() {
+				return false;
+			}
+
+			@Override
+			protected boolean getConfiguredPrimaryKey() {
+				return true;
+			}
+
+		}
+
+		@Order(2)
+		public class LastNameColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("LastName");
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 100;
+			}
+		}
+
+		@Order(4)
+		public class CityColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("City");
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 120;
+			}
+
+		}
+
+		@Order(5)
+		public class CountryColumn extends AbstractSmartColumn<String> {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("Country");
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 100;
+			}
+
+			@Override
+			protected Class<? extends ILookupCall<String>> getConfiguredLookupCall() {
+				return CountryLookupCall.class;
+			}
+		}
+
+		@Order(6)
+		public class PhoneColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("Phone");
+			}
+
+			@Override
+			protected boolean getConfiguredVisible() {
+				return false;
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 120;
+			}
+		}
+
+		@Order(7)
+		public class MobileColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("Mobile");
+			}
+
+			@Override
+			protected boolean getConfiguredVisible() {
+				return false;
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 120;
+			}
+		}
+
+		@Order(8)
+		public class EmailColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("Email");
+			}
+
+			@Override
+			protected boolean getConfiguredVisible() {
+				return false;
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 120;
+			}
+		}
+
+		@Order(9)
+		public class OrganizationColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("Organization");
+			}
+
+			@Override
+			protected boolean getConfiguredVisible() {
+				return false;
+			}
+
+			@Override
+			protected int getConfiguredWidth() {
+				return 120;
+			}
+		}
+
 		@Override
 		protected Class<? extends IMenu> getConfiguredDefaultMenu() {
 			return EditMenu.class;
@@ -96,171 +259,6 @@ public class PersonTablePage extends AbstractPageWithTable<Table> {
 				}
 			}
 		}
-// end menu -------------------------------------------------------
 
-		public CountryColumn getCountryColumn() {
-			return getColumnSet().getColumnByClass(CountryColumn.class);
-		}
-
-		public PersonIdColumn getPersonIdColumn() {
-			return getColumnSet().getColumnByClass(PersonIdColumn.class);
-		}
-
-	}
-
-	@Order(4)
-	public class CityColumn extends AbstractStringColumn {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("City");
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 120;
-		}
-	
-	}
-
-	@Order(5)
-	public class CountryColumn extends AbstractSmartColumn<String> {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("Country");
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 100;
-		}
-	
-		@Override
-		protected Class<? extends ILookupCall<String>> getConfiguredLookupCall() {
-			return CountryLookupCall.class;
-		}
-	}
-
-	@Order(8)
-	public class EmailColumn extends AbstractStringColumn {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("Email");
-		}
-	
-		@Override
-		protected boolean getConfiguredVisible() {
-			return false;
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 120;
-		}
-	}
-
-	@Order(2)
-	public class FirstNameColumn extends AbstractStringColumn {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("FirstName");
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 120;
-		}
-	
-	}
-
-	@Order(3)
-	public class LastNameColumn extends AbstractStringColumn {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("LastName");
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 120;
-		}
-	
-	}
-
-	@Order(7)
-	public class MobileColumn extends AbstractStringColumn {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("Mobile");
-		}
-	
-		@Override
-		protected boolean getConfiguredVisible() {
-			return false;
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 120;
-		}
-	}
-
-	@Order(9)
-	public class OrganizationColumn extends AbstractStringColumn {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("Organization");
-		}
-	
-		@Override
-		protected boolean getConfiguredVisible() {
-			return false;
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 120;
-		}
-	}
-
-	@Order(1)
-	public class PersonIdColumn extends AbstractStringColumn {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("MyNlsKey");
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 100;
-		}
-	
-		@Override
-		protected boolean getConfiguredDisplayable() {
-			return false;
-		}
-	
-		@Override
-		protected boolean getConfiguredPrimaryKey() {
-			return true;
-		}
-	
-	}
-
-	@Order(6)
-	public class PhoneColumn extends AbstractStringColumn {
-		@Override
-		protected String getConfiguredHeaderText() {
-			return TEXTS.get("Phone");
-		}
-	
-		@Override
-		protected boolean getConfiguredVisible() {
-			return false;
-		}
-	
-		@Override
-		protected int getConfiguredWidth() {
-			return 120;
-		}
 	}
 }
